@@ -21,11 +21,12 @@ form {
   width: 60vw;
   max-width: 500px;
   min-width: 300px;
-  margin: 0 auto;
+  margin: 0 auto;  /* Horizontally center */
   padding-bottom: 2em;
   background-color: #ffffff; /* White form background for contrast */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for emphasis */
-  border-radius: 10px; /* Rounded corners for a softer aesthetic */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: 2em;
 }
 
 /* Fieldsets */
@@ -51,24 +52,17 @@ input, textarea, select {
   margin: 10px 0 0 0;
   width: 100%;
   min-height: 2em;
-  padding: 0.5em;
+  padding: 0.8em;
   background-color: #fdf8fc; /* Light pinkish-white for input fields */
   border: 1px solid #c99bbf; /* Muted pink border */
-  color: #663a50; /* Text color to match body */
-  border-radius: 5px; /* Rounded inputs */
+  color: #663a50; /* Text color */
+  border-radius: 5px;
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: #9db1ff; /* Periwinkle accent on focus */
   box-shadow: 0px 0px 4px rgba(157, 177, 255, 0.5);
-}
-
-/* Inline Elements */
-.inline {
-  display: inline; 
-  margin: 0 0.5em 0 0;
-  vertical-align: middle;
 }
 
 /* Submit Button */
@@ -81,7 +75,7 @@ input[type="submit"] {
   background-color: #c9f8e0; /* Pastel green button background */
   color: #663a50; /* Complementary muted purple text */
   border: 2px solid #9db1ff; /* Periwinkle border */
-  border-radius: 5px; /* Rounded button */
+  border-radius: 5px;
   min-width: 300px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -93,14 +87,6 @@ input[type="submit"]:hover {
   transform: translateY(-3px); /* Slight lift effect */
 }
 
-/* File Inputs */
-input[type="file"] {
-  padding: 1px 2px;
-  background-color: #fdf8fc;
-  border: 1px solid #c99bbf;
-  border-radius: 5px;
-}
-
 /* Links */
 a {
   color: #9db1ff; /* Periwinkle links */
@@ -109,16 +95,5 @@ a {
 }
 
 a:hover {
-  color: #c9f8e0; /* Soft green on hover */
-}
-
-/* Accents */
-h1 {
-  border-bottom: 3px solid #9db1ff; /* Periwinkle underline for h1 */
-  display: inline-block;
-  padding-bottom: 0.5em;
-}
-
-fieldset {
-  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white for sections */
+  color: #c9f8e0; /* Keroppi green on hover */
 }
