@@ -49,8 +49,8 @@ label {
 /* Input, Textarea, Select */
 input, textarea, select {
   margin: 10px 0 0 0;
-  width: 100%;
-  padding: 0.8em;
+  width: 80%;
+  padding: 0.5em;
   min-height: 2em;
   background-color: rgba(255, 240, 240, 0.8); /* Light pinkish background */
   border: 1px solid rgba(200, 150, 220, 0.5); /* Light periwinkle border */
