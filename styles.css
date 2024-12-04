@@ -10,7 +10,7 @@ body {
 }
 
 /* Heading and Paragraphs */
-h1, p {
+h1, h2, h3, p {
   margin: 1em auto;
   text-align: center;
   color: #6b3f7d; /* Matching heading color with body text */
