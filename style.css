@@ -68,3 +68,66 @@ p {
 em {
   color: #209D50;
 }
+
+
+/* Cornell-style log background */
+.log-body {
+  background-color: #F0F0F0;
+  font-family: 'PT Serif', serif;
+  color: #1D231C;
+  margin: 0;
+  padding: 0;
+}
+
+/* Log container */
+.log-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+}
+
+/* Individual log entries */
+.log-entry {
+  display: flex;
+  border-top: 1px solid #CCCCCC;
+  padding: 1rem 0;
+}
+
+.log-entry:last-child {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+/* Left column: dates */
+.log-date {
+  width: 25%;
+  padding-right: 1rem;
+  font-weight: bold;
+  font-family: 'Gilda Display', serif;
+  font-size: 1rem;
+  color: #209D50;
+}
+
+/* Right column: notes */
+.log-note {
+  width: 75%;
+  background-color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .log-entry {
+    flex-direction: column;
+  }
+
+  .log-date,
+  .log-note {
+    width: 100%;
+  }
+
+  .log-date {
+    margin-bottom: 0.5rem;
+  }
+}
