@@ -1,38 +1,70 @@
-/* Base font size conversion: 16pt ≈ 21.33px */
-/* For web, 16px is the common default, but if you want exact 16pt, use 21.33px */
-
-html {
-  font-size: 16px; /* Adjust if you want to approximate 16pt more closely */
-  color: #1D231C;  /* Base text color, dark near-black */
-  background-color: #FFFFFF; /* Default background */
+/* Typography */
+body {
   font-family: 'PT Serif', serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gilda Display', serif;
-  color: #209D50; /* Accent green for headings, can be adjusted */
-  margin-bottom: 0.5em;
-}
-
-p, li, span {
-  font-family: 'PT Serif', serif;
-  color: #1D231C; /* Dark text for readability */
-  font-size: 1rem; /* 16px base */
-  line-height: 1.5;
-}
-
-a {
-  color: #209D50;
-  text-decoration: none;
-}
-
-a:hover, a:focus {
-  color: #000000;
-  text-decoration: underline;
-}
-
-/* Example usage of lighter neutral */
-.background-light {
-  background-color: #E1DFD9;
+  font-size: 16px;
   color: #1D231C;
+  background-color: #E1DFD9; /* Neutral background */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #1D231C;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-title h1 {
+  font-family: 'Gilda Display', serif;
+  font-size: 1.75rem;
+  color: #209D50;
+  margin: 0;
+}
+
+/* Navigation */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  color: #1D231C;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #209D50;
+}
+
+/* Main content container */
+.container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E1DFD9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(29, 35, 28, 0.1);
+}
+
+p {
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+em {
+  color: #209D50;
 }
