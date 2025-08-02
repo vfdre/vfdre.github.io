@@ -1,68 +1,38 @@
-/* Reset margins */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Base font size conversion: 16pt ≈ 21.33px */
+/* For web, 16px is the common default, but if you want exact 16pt, use 21.33px */
+
+html {
+  font-size: 16px; /* Adjust if you want to approximate 16pt more closely */
+  color: #1D231C;  /* Base text color, dark near-black */
+  background-color: #FFFFFF; /* Default background */
+  font-family: 'PT Serif', serif;
 }
 
-/* Base layout */
-body {
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 13px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gilda Display', serif;
+  color: #209D50; /* Accent green for headings, can be adjusted */
+  margin-bottom: 0.5em;
+}
+
+p, li, span {
+  font-family: 'PT Serif', serif;
+  color: #1D231C; /* Dark text for readability */
+  font-size: 1rem; /* 16px base */
   line-height: 1.5;
-  background-color: #f8f9fa;
-  color: #1a1a1a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-rendering: optimizeLegibility;
 }
 
-/* Container: light border, clean grid feel */
-.container {
-  padding: 1.5rem 2rem;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  max-width: 600px;
-  text-align: left;
-}
-
-/* Typography */
-h1 {
-  font-weight: 500;
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  color: #222;
-}
-
-p {
-  color: #555;
-  margin-bottom: 1rem;
-  font-weight: 400;
-}
-
-/* Navigation */
-nav {
-  margin-top: 1rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.2rem;
-  padding-left: 0;
-}
-
-nav a {
+a {
+  color: #209D50;
   text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  border-bottom: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
 }
 
-nav a:hover {
-  border-bottom: 1px solid #444
+a:hover, a:focus {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/* Example usage of lighter neutral */
+.background-light {
+  background-color: #E1DFD9;
+  color: #1D231C;
+}
