@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="site-title"><h1>Vin Dreusmire</h1></div>
-    <nav>
+  <header role="banner">
+    <div class="site-title">
+      <h1>Vin Dreusmire</h1>
+    </div>
+    <nav role="navigation" aria-label="Primary navigation">
       <ul class="nav-list">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="ops-log.html">Ops Log</a></li>
@@ -18,33 +20,38 @@
     </nav>
   </header>
 
-  <main class="container">
+  <main class="container" role="main">
     <section>
       <p><em>This site is under quiet construction.</em></p>
       <p>Field notes are being compiled. Nothing here is for show.</p>
     </section>
-  </main>
-<script>
-  fetch('/posts.json')
-    .then(response => response.json())
-    .then(posts => {
-      // Sort posts by date, newest first
-      posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-      const recent = posts[0];
-      const container = document.getElementById('recent-post');
-      container.innerHTML = `
-        <article>
-          <h2><a href="${recent.url}">${recent.title}</a></h2>
-          <p><small>Published on ${new Date(recent.date).toLocaleDateString()}</small></p>
-          <p><a href="${recent.url}">Read more →</a></p>
-        </article>
-      `;
-    })
-    .catch(err => {
-      console.error('Failed to load posts:', err);
-      document.getElementById('recent-post').textContent = 'No recent posts available.';
-    });
-</script>
 
+    <section id="recent-post" aria-live="polite">
+      <p>Loading recent post...</p>
+    </section>
+  </main>
+
+  <script>
+    fetch('/posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        // Sort posts by date, newest first
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const recent = posts[0];
+        const container = document.getElementById('recent-post');
+        container.innerHTML = `
+          <article>
+            <h2><a href="${recent.url}">${recent.title}</a></h2>
+            <p><small>Published on ${new Date(recent.date).toLocaleDateString()}</small></p>
+            <p><a href="${recent.url}">Read more →</a></p>
+          </article>
+        `;
+      })
+      .catch(err => {
+        console.error('Failed to load posts:', err);
+        const container = document.getElementById('recent-post');
+        container.textContent = 'No recent posts available.';
+      });
+  </script>
 </body>
 </html>
