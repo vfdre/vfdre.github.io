@@ -1,79 +1,128 @@
-/* Base reset and fonts */
+/* Base & body */
 body {
   font-family: Georgia, serif;
   background-color: #f9f7f1; /* cream */
-  color: #111; /* dark text */
+  color: #111;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
+/* Links */
 a {
   color: #046307; /* emerald green */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
-
-a:hover, a:focus {
+a:hover,
+a:focus {
+  color: #034a02; /* darker green on hover */
   text-decoration: underline;
 }
 
+/* Header */
 header {
   background-color: #046307; /* emerald green */
-  color: #f9f7f1; /* cream */
-  padding: 1rem;
+  color: #f9f7f1;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .site-title h1 {
   margin: 0;
-  font-weight: normal;
+  font-weight: 600;
   font-size: 1.8rem;
 }
 
 .nav-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
-
 .nav-list a {
-  color: #f9f7f1;
   font-weight: 600;
+  color: #f9f7f1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.nav-list a[aria-current="page"],
+.nav-list a:hover,
+.nav-list a:focus {
+  background-color: #034a02;
 }
 
+/* Container */
 .container {
   max-width: 700px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
+/* Post summaries - card style */
 .post-summary {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+  background-color: #fff; /* white card background */
+  border: 1px solid #d7d7d7; /* subtle light grey border */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* soft shadow */
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
 }
 
+.post-summary:hover,
+.post-summary:focus-within {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Post title */
 .post-summary h2 {
-  margin: 0 0 0.3rem 0;
-  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  font-size: 1.6rem;
 }
 
+/* Post date */
 .post-date {
+  font-style: italic;
   color: #666;
   font-size: 0.9rem;
-  margin-bottom: 0.6rem;
-  font-style: italic;
+  margin-bottom: 1rem;
 }
 
+/* Post excerpt */
 .post-excerpt {
-  margin-bottom: 0.6rem;
-  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  color: #333;
 }
 
+/* Read more link */
 .read-more {
   font-weight: 600;
   color: #046307;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
 }
