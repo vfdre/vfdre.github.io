@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About – Vin Dreusmire</title>
+  <title>About | Vin Dreusmire</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="site-title"><h1>Vin Dreusmire</h1></div>
-    <nav>
+  <header role="banner">
+    <div class="site-title">
+      <h1>Vin Dreusmire</h1>
+    </div>
+    <nav role="navigation" aria-label="Primary navigation">
       <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="ops-log.html">Ops Log</a></li>
@@ -18,10 +20,15 @@
     </nav>
   </header>
 
-  <main class="container about-container">
-    <h2>About</h2>
-    <p>Vincent is a professional based in Tampa, Florida. A proud Southern surrealist with a taste for the finer things in life — like gator nuggets.</p>
-    <p>This site serves as a private field journal and blog space, built with intention and care for clarity and quiet reflection.</p>
+  <main class="container" role="main">
+    <article class="post-summary">
+      <h2>About Vin Dreusmire</h2>
+      <p>Hello, I’m Vin — a Southern writer, observer, and digital note-taker chronicling the twists and turns of life through field notes and reflections.</p>
+      <p>Here you’ll find a collection of thoughts, stories, and insights — some raw, some refined — from my journeys navigating both the physical world and the complex inner landscapes.</p>
+      <p>This site is a work in progress, a quiet construction of ideas and experiences that matter to me. I hope you find something meaningful here, whether it’s a spark of curiosity, a shared perspective, or just a moment of connection.</p>
+      <p>Thank you for visiting.</p>
+      <p><strong>— Vin</strong></p>
+    </article>
   </main>
 </body>
 </html>
