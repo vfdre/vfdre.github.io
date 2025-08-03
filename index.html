@@ -24,5 +24,27 @@
       <p>Field notes are being compiled. Nothing here is for show.</p>
     </section>
   </main>
+<script>
+  fetch('/posts.json')
+    .then(response => response.json())
+    .then(posts => {
+      // Sort posts by date, newest first
+      posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const recent = posts[0];
+      const container = document.getElementById('recent-post');
+      container.innerHTML = `
+        <article>
+          <h2><a href="${recent.url}">${recent.title}</a></h2>
+          <p><small>Published on ${new Date(recent.date).toLocaleDateString()}</small></p>
+          <p><a href="${recent.url}">Read more →</a></p>
+        </article>
+      `;
+    })
+    .catch(err => {
+      console.error('Failed to load posts:', err);
+      document.getElementById('recent-post').textContent = 'No recent posts available.';
+    });
+</script>
+
 </body>
 </html>
