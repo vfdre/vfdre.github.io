@@ -1,134 +1,136 @@
-/* Base fonts */
-@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=PT+Serif&display=swap');
-
-body {
-  font-family: 'PT Serif', serif;
-  font-size: 16px;
-  color: #1D231C;
-  background-color: #E1DFD9;
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: 1.5;
 }
 
-/* Headings */
-h1, h2, h3 {
-  font-family: 'Gilda Display', serif;
-  color: #209D50;
-  margin: 0 0 1rem 0;
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #fefcf7; /* Cream */
+  color: #111; /* Almost black for text */
+  line-height: 1.75;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Header/Nav */
+/* Container for main content */
+main.container {
+  max-width: 720px;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+/* Header */
 header {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #1D231C;
-  padding: 1rem 2rem;
+  border-bottom: 3px solid #046b45; /* Emerald green */
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 5px rgba(29, 35, 28, 0.1);
 }
 
 .site-title h1 {
-  font-size: 1.8rem;
-  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #046b45; /* Emerald */
+  letter-spacing: 1px;
 }
 
-.nav-list {
+/* Navigation */
+nav .nav-list {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
 }
 
-.nav-list a {
-  font-family: 'PT Serif', serif;
-  font-size: 1rem;
-  color: #1D231C;
+nav .nav-list li a {
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+nav .nav-list li a:hover,
+nav .nav-list li a[aria-current="page"] {
+  color: #046b45;
+  border-bottom-color: #046b45;
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Emphasized text */
+em {
+  color: #555;
+  font-style: italic;
+}
+
+/* Recent Post Article */
+#recent-post article {
+  border-top: 2px solid #e0ddd8;
+  padding-top: 1.5rem;
+}
+
+#recent-post article h2 {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  color: #046b45;
+}
+
+#recent-post article h2 a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+#recent-post article h2 a:hover {
+  color: #023923; /* Darker emerald */
+  text-decoration: underline;
+}
+
+#recent-post article p small {
+  color: #7a7a7a;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#recent-post article p a {
+  font-weight: 600;
+  color: #046b45;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-list a:hover,
-.nav-list a[aria-current="page"] {
-  color: #209D50;
-  font-weight: 600;
+#recent-post article p a:hover {
+  text-decoration: underline;
+  color: #023923;
 }
 
-/* Container */
-.container {
-  max-width: 720px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-  background-color: #FFFFFF;
-  border: 1px solid #E1DFD9;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(29, 35, 28, 0.1);
-}
-
-/* About page */
-.about-container h2 {
+/* Paragraph styling */
+p {
   margin-bottom: 1rem;
 }
 
-/* Journal entry: Cornell style */
-.log-body {
-  background-color: #F5F5F5;
-  min-height: 100vh;
-  margin: 0;
-  padding: 3rem 1rem;
-  font-family: 'PT Serif', serif;
+/* Link styling for general text */
+a {
+  color: #046b45;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.log-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.log-entry {
-  display: flex;
-  border-top: 1px solid #ccc;
-  padding: 1.2rem 0;
-  align-items: flex-start;
-}
-
-.log-entry:last-child {
-  border-bottom: 1px solid #ccc;
-}
-
-.log-date {
-  width: 20%;
-  padding-right: 1.5rem;
-  font-family: 'Gilda Display', serif;
-  font-weight: 600;
-  color: #209D50;
-  font-size: 1.05rem;
-}
-
-.log-note {
-  width: 80%;
-  background-color: #E1DFD9;
-  padding: 1rem 1.2rem;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(29, 35, 28, 0.1);
-  color: #1D231C;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 600px) {
-  .log-entry {
-    flex-direction: column;
-  }
-  .log-date, .log-note {
-    width: 100%;
-  }
-  .log-date {
-    margin-bottom: 0.5rem;
-  }
+a:hover {
+  text-decoration: underline;
+  color: #023923;
 }
