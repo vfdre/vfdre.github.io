@@ -1,6 +1,9 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@600&display=swap');
+
 /* Base & body */
 body {
-  font-family: Georgia, serif;
+  font-family: 'Merriweather', serif;
   background-color: #f9f7f1; /* cream */
   color: #111;
   margin: 0;
@@ -10,19 +13,19 @@ body {
 
 /* Links */
 a {
-  color: #046307; /* emerald green */
+  color: #2a6f4f; /* deeper emerald green */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 a:hover,
 a:focus {
-  color: #034a02; /* darker green on hover */
+  color: #1e4b35; /* darker green on hover */
   text-decoration: underline;
 }
 
 /* Header */
 header {
-  background-color: #046307; /* emerald green */
+  background-color: #2a6f4f; /* updated emerald green */
   color: #f9f7f1;
   padding: 1rem 2rem;
   display: flex;
@@ -34,10 +37,12 @@ header {
   z-index: 10;
 }
 
-.site-title h1 {
+.site-title h1,
+.site-title h2 {
   margin: 0;
   font-weight: 600;
   font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-list {
@@ -47,16 +52,20 @@ header {
   margin: 0;
   padding: 0;
 }
+
 .nav-list a {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #f9f7f1;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
 }
+
 .nav-list a[aria-current="page"],
 .nav-list a:hover,
 .nav-list a:focus {
-  background-color: #034a02;
+  background-color: #1e4b35;
+  outline: none;
 }
 
 /* Container */
@@ -75,6 +84,7 @@ header {
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
   transition: box-shadow 0.3s ease;
+  font-family: 'Merriweather', serif;
 }
 
 .post-summary:hover,
@@ -88,6 +98,8 @@ header {
   margin-bottom: 0.3rem;
   font-weight: 700;
   font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #2a6f4f;
 }
 
 /* Post date */
@@ -107,7 +119,7 @@ header {
 /* Read more link */
 .read-more {
   font-weight: 600;
-  color: #046307;
+  color: #2a6f4f;
   text-decoration: underline;
   font-size: 1rem;
 }
