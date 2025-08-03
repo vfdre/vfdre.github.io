@@ -9,7 +9,7 @@
 <body>
   <header role="banner">
     <div class="site-title">
-      <h1>Vin Dreusmire</h1>
+      <h1>Vin Dreusmire | Field Notes</h1>
     </div>
     <nav role="navigation" aria-label="Primary navigation">
       <ul class="nav-list">
@@ -21,35 +21,35 @@
   </header>
 
   <main class="container" role="main">
-    <section>
-      <p><em>This site is under quiet construction.</em></p>
-      <p>Field notes are being compiled. Nothing here is for show.</p>
-    </section>
-
-    <section id="recent-post" aria-live="polite">
-      <p>Loading recent post...</p>
+    <section id="posts-list" aria-live="polite">
+      <p>Loading recent posts...</p>
     </section>
   </main>
 
   <script>
-    fetch('/posts.json')
-      .then(response => response.json())
+    fetch('posts/posts.json')
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.json();
+      })
       .then(posts => {
-        // Sort posts by date, newest first
         posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-        const recent = posts[0];
-        const container = document.getElementById('recent-post');
-        container.innerHTML = `
-          <article>
-            <h2><a href="${recent.url}">${recent.title}</a></h2>
-            <p><small>Published on ${new Date(recent.date).toLocaleDateString()}</small></p>
-            <p><a href="${recent.url}">Read more →</a></p>
-          </article>
-        `;
+        const container = document.getElementById('posts-list');
+        container.innerHTML = '';
+        posts.forEach(post => {
+          container.innerHTML += `
+            <article class="post-summary">
+              <h2><a href="${post.url}">${post.title}</a></h2>
+              <p class="post-date">${new Date(post.date).toLocaleDateString()}</p>
+              <p class="post-excerpt">${post.excerpt || ''}</p>
+              <p><a href="${post.url}" class="read-more">Read more →</a></p>
+            </article>
+          `;
+        });
       })
       .catch(err => {
         console.error('Failed to load posts:', err);
-        const container = document.getElementById('recent-post');
+        const container = document.getElementById('posts-list');
         container.textContent = 'No recent posts available.';
       });
   </script>
